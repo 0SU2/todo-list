@@ -19,27 +19,6 @@ formulario.addEventListener("submit", (e) => {
     setTarea(e)
 })
 
-listaTareas.addEventListener("click", (e) => {
-    btnAcciones(e)
-})
-
-const btnAcciones = e => {
-    if (e.target.classList.contains('fa-check-circle')) {
-        tareas(e.target.dataset.id).estado = true
-        pintarTareas()
-    } 
-    if (e.target.classList.contains('fa-minus-circle')) {
-        delete tareas(e.target.dataset.id).estado
-        pintarTareas()
-    }
-    if (e.target.classList.contains('fa-undo-alt')) {
-        tareas(e.target.dataset.id).estado = true
-        pintarTareas()
-    }
-
-    e.stopPropagation()
-}
-
 const setTarea = e => {
     const texto = e.target.querySelector('input').value
     if (texto.trim() === '') {
